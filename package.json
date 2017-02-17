@@ -1,0 +1,28 @@
+{
+  "name": "rafmeter-injector",
+  "version": "0.0.1",
+  "description": "Injects instrumentation to measure the number of frames per seconds for a page (fps)",
+  "main": "rafmeter-injector.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristiingineru/rafmeter-injector.git"
+  },
+  "keywords": [
+    "fps",
+    "raf",
+    "meter"
+  ],
+  "author": "Cristi Ingineru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cristiingineru/rafmeter-injector/issues"
+  },
+  "homepage": "https://github.com/cristiingineru/rafmeter-injector#readme",
+  "dependencies": {
+    "jsdom": "^9.11.0",
+    "rafmeter": "^0.0.1"
+  }
+}

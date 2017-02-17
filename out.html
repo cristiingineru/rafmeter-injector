@@ -1,0 +1,128 @@
+<html><head><title>Index of /dist/</title></head>
+<body bgcolor="white"><script>var RAFMeter = function () {
+
+  var displayNode,
+      curentTime,
+      previousTime = Date.now(),
+      previousDisplayTime = 0,
+      maxDurationCount = 20,
+      durations = [],
+      displayInterval = 500;
+
+
+  var tick = function() {
+    curentTime = Date.now();
+
+    if (durations.length === maxDurationCount) {
+      durations.shift();
+    }
+    durations.push(curentTime - previousTime);
+
+    display(durations);
+
+    previousTime = curentTime;
+    requestAnimationFrame(tick);
+  };
+
+
+  var display = function(durations) {
+    var duration = durations.reduce(sum, 0),
+        meanDuration = duration / durations.length,
+        fps = (1000 / meanDuration).toFixed(1),
+        message = fps + ' fps',
+        elapsedTimeSinceLastDisplay = curentTime - previousDisplayTime;
+    if (!displayNode) {
+      displayNode = tryCreateDisplayNode();
+    }
+    if (displayNode && (elapsedTimeSinceLastDisplay > displayInterval)) {
+      displayNode.nodeValue = message;
+      previousDisplayTime = curentTime;
+    }
+  };
+
+
+  var sum = function(a, b) {
+    return a + b;
+  };
+
+
+  var insertFirst = function(parent, newChild) {
+    if (parent.firstChild) {
+      parent.insertBefore(newChild, parent.firstChild);
+    } else {
+      parent.appendChild(newChild);
+    }
+  };
+
+
+  var tryCreateDisplayNode = function() {
+    var target = document.body, displayNode;
+    if (target) {
+        displayNode = document.createTextNode('x fps');
+
+        var para = document.createElement('p');
+        para.className = 'fpsMeter';
+        para.appendChild(displayNode);
+
+        insertFirst(target, para);
+    }
+    return displayNode;
+  };
+
+
+  requestAnimationFrame(tick);
+}
+window.rafMeter = new RAFMeter();</script>
+<h1>Index of /dist/</h1><hr><pre><a href="../">../</a>
+<a href="latest/">latest/</a>                                            16-Sep-2015 00:23                   -
+<a href="latest-v1.x/">latest-v1.x/</a>                                       01-Sep-2015 06:41                   -
+<a href="latest-v2.x/">latest-v2.x/</a>                                       01-Sep-2015 06:41                   -
+<a href="latest-v3.x/">latest-v3.x/</a>                                       16-Sep-2015 00:23                   -
+<a href="v1.0.0/">v1.0.0/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.0.1/">v1.0.1/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.0.2/">v1.0.2/</a>                                            01-Sep-2015 06:39                   -
+<a href="v1.0.3/">v1.0.3/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.0.4/">v1.0.4/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.1.0/">v1.1.0/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.2.0/">v1.2.0/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.3.0/">v1.3.0/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.4.1/">v1.4.1/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.4.2/">v1.4.2/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.4.3/">v1.4.3/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.5.0/">v1.5.0/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.5.1/">v1.5.1/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.6.0/">v1.6.0/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.6.1/">v1.6.1/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.6.2/">v1.6.2/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.6.3/">v1.6.3/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.6.4/">v1.6.4/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.7.1/">v1.7.1/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.8.1/">v1.8.1/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.8.2/">v1.8.2/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.8.3/">v1.8.3/</a>                                            01-Sep-2015 06:41                   -
+<a href="v1.8.4/">v1.8.4/</a>                                            01-Sep-2015 06:41                   -
+<a href="v2.0.0/">v2.0.0/</a>                                            01-Sep-2015 06:41                   -
+<a href="v2.0.1/">v2.0.1/</a>                                            01-Sep-2015 06:41                   -
+<a href="v2.0.2/">v2.0.2/</a>                                            01-Sep-2015 06:41                   -
+<a href="v2.1.0/">v2.1.0/</a>                                            01-Sep-2015 06:41                   -
+<a href="v2.2.0/">v2.2.0/</a>                                            01-Sep-2015 06:41                   -
+<a href="v2.2.1/">v2.2.1/</a>                                            01-Sep-2015 06:41                   -
+<a href="v2.3.0/">v2.3.0/</a>                                            01-Sep-2015 06:41                   -
+<a href="v2.3.1/">v2.3.1/</a>                                            01-Sep-2015 06:41                   -
+<a href="v2.3.2/">v2.3.2/</a>                                            01-Sep-2015 06:41                   -
+<a href="v2.3.3/">v2.3.3/</a>                                            01-Sep-2015 06:41                   -
+<a href="v2.3.4/">v2.3.4/</a>                                            01-Sep-2015 06:41                   -
+<a href="v2.4.0/">v2.4.0/</a>                                            01-Sep-2015 06:41                   -
+<a href="v2.5.0/">v2.5.0/</a>                                            01-Sep-2015 06:41                   -
+<a href="v3.0.0/">v3.0.0/</a>                                            01-Sep-2015 06:41                   -
+<a href="v3.1.0/">v3.1.0/</a>                                            01-Sep-2015 06:41                   -
+<a href="v3.2.0/">v3.2.0/</a>                                            31-Aug-2015 02:26                   -
+<a href="v3.3.0/">v3.3.0/</a>                                            07-Sep-2015 11:29                   -
+<a href="v3.3.1/">v3.3.1/</a>                                            16-Sep-2015 00:23                   -
+<a href="docs">docs</a>                                               16-Sep-2015 00:22                   3
+<a href="index.json">index.json</a>                                         15-Sep-2015 09:08               11917
+<a href="index.tab">index.tab</a>                                          15-Sep-2015 09:08                7395
+<a href="iojs-latest.tar.gz">iojs-latest.tar.gz</a>                                 15-Sep-2015 09:07            22357208
+</pre><hr>
+
+</body></html>
