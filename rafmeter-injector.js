@@ -13,7 +13,7 @@ var insertFirst = function(parent, newChild) {
 
 
 jsdom.env(
-  "https://iojs.org/dist/",
+  'test.html',
   [],
   function (err, window) {
     var instrumentation = 'var RAFMeter = ' + rafmeter.toString() + '\n' + 'window.rafMeter = new RAFMeter();',
