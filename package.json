@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
   },
+  "bin": {
+    "rafmeter-injector": "rafmeter-injector.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cristiingineru/rafmeter-injector.git"
