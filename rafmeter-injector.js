@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 var jsdom = require('jsdom');
 var rafmeter = require('rafmeter');
 var fs = require('fs');
