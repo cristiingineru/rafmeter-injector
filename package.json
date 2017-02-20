@@ -1,6 +1,6 @@
 {
   "name": "rafmeter-injector",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Adds instrumentation to a bunch of html pages for measuring the raf/fps",
   "main": "rafmeter-injector.js",
   "scripts": {
