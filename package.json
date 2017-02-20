@@ -24,6 +24,6 @@
   "dependencies": {
     "jsdom": "^9.11.0",
     "glob": "^7.1.1",
-    "rafmeter": "^0.0.1"
+    "rafmeter": "^0.1.0"
   }
 }
