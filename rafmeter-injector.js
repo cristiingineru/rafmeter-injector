@@ -59,7 +59,7 @@ var args = process.argv.slice(2),
       : '**/node_modules/**';
 
 
-glob(pattern, {ignore: ignores}, function (er, files) {
+glob(pattern, {dot: true, ignore: ignores}, function (er, files) {
   if (er) {
     console.log(er);
   } else {
